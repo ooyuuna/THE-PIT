@@ -1,2 +1,36 @@
-regFile {
+module regfile (clk, rs1In, rs2In, rd, reset, data, writeEnable, rs1Out, rs2Out);
+	//writeenable = 0 read only
+	//1 is for wriitng
+	
+	input clk, reset, writeEnable;
+	input [4:0] rs1In;
+	input [4:0] rs2In;
+	input [4:0] rd;
+	input [31:0] data;
+	
+	output reg [31:0] rs1Out;
+	output reg [31:0] rs2Out;
+	reg [31:0] r[0:31];
+	
+	integer i;
+	always @ (posedge clk) begin //always
+		if (reset) begin
+			for (i = 0; i < 32; i = i + 1) begin
+			r[i] = 0;
+			end
+		end
+		
+		else if (!writeEnable) begin
+		rs1Out <= r[rs1In];
+		rs2Out <= r[rs2In];
+		end
+		
+		else begin
+		r[rd] <= data;
+		end
+		
+		
+		
+	end //always
+endmodule
 
