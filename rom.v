@@ -1,6 +1,6 @@
 module rom(addr, enable, clk, out);
 
-reg[7:0] storage [127:0];
+reg[7:0] storage [1023:0];
 
 input[31:0] addr;
 input enable, clk;
@@ -11,7 +11,7 @@ integer i;
 initial begin
 
 	//initializing the entire ROM to zero to begin.
-	for (i = 0; i < 128; i = i + 1) begin
+	for (i = 0; i < 1024; i = i + 1) begin
 			storage[i] = 0;
 			end
 			
@@ -25,7 +25,7 @@ initial begin
 
 always @(posedge clk) begin
 //reading
-	if (enable && addr <= 124) begin
+	if (enable && addr <= 1020) begin
 		out <= {storage[addr + 3], storage[addr + 2], storage[addr + 1], storage[addr]};
 	end
 
