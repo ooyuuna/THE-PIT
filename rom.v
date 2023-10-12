@@ -23,7 +23,7 @@ initial begin
 			
 	end //initial end
 
-always @(posedge clk) begin
+always @(enable || addr) begin
 //reading
 	if (enable && addr <= 1020) begin
 		out <= {storage[addr + 3], storage[addr + 2], storage[addr + 1], storage[addr]};
