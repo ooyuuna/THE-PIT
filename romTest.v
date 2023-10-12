@@ -20,28 +20,28 @@ initial begin
 //load first word
 addr <= 0;
 enable <= 1;
-#5
+#5;
 
 enable <= 0;
-#5
+#5;
 //second word
-enable <= 1
-addr <= 4
-#5
+enable <= 1;
+addr <= 4;
+#5;
 
 enable <= 0;
-#5
+#5;
 //third word
-enable <= 1
-addr <=8
-#5
+enable <= 1;
+addr <=8;
+#5;
 
 enable <= 0;
-#5
+#5;
 //fourth word
-enable <= 1
-addr <= 12
-#5
+enable <= 1;
+addr <= 12;
+#5;
 enable <= 0;
 end
 
