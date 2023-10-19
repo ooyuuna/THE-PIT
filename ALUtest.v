@@ -32,28 +32,28 @@ initial begin
 	
 	#10;
 	
-	ALUop <= 0010; //xor
+	ALUop <= 4'b0010; //xor
 	
 	#10;
 	
-	ALUop <= 0011; //or
+	ALUop <= 4'b0011; //or
 	
 	#10;
 	
-	ALUop <= 0100; //and
+	ALUop <= 4'b0100; //and
 	
 	#10;
 	
 	rs2 <= 2;
-	ALUop <= 0101; //shift left by 2
+	ALUop <= 4'b0101; //shift left by 2
 	
 	#10;
 	
-	ALUop <= 1101; //shift right by 2.
+	ALUop <= 4'b1101; //shift right by 2.
 	
 	#10;
 	
-	ALUop <= 1111; //expecting a value of 0 to test detault
+	ALUop <= 4'b1111; //expecting a value of 0 to test detault
 	
 	#10;
 	
