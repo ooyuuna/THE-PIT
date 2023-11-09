@@ -26,8 +26,8 @@ initial begin
 	ALUop <= 4'b1001; //add
 	
 	#10;
-	rs1 <= 18;
-	rs2 <= 12;
+	rs1 <= 12;
+	rs2 <= 18;
 	ALUop <= 4'b0001; //sub
 	
 	#10;
