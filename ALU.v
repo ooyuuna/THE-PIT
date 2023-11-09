@@ -1,11 +1,11 @@
 module ALU (rs1, rs2, ALUop, clk, result);
 //might want signals for the output
-input [31:0] rs1;
-input [31:0] rs2;
+input signed [31:0] rs1;
+input signed [31:0] rs2;
 input [3:0] ALUop; //signal sent in VIA the control unit
 input clk;
 
-output reg [31:0] result;
+output reg signed [31:0] result;
 
 always @(posedge clk) begin //always
 	case (ALUop)
