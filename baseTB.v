@@ -19,6 +19,17 @@ initial begin
 clk = 1;
 #5;
 
+enable <= 1;
+ #10;
+ 
+ reset <= 1;
+ 
+ #10;
+ 
+ reset <= 0;
+ #5;
+
+
 dataIn <= 20;
 readWrite <= 1;
 addr <= 7; //should use chip 0 for addr 7.
