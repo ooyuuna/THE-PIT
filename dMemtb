@@ -37,17 +37,17 @@ dataIn <= 32;
 readWrite <= 1;
 addr <= 3587; //should use chip 7 for addr 3.
 
-#10
+#10;
 
 readWrite = 0;
 addr <= 3587;
 
-#10
+#10;
 
 
 addr <= 7;
 
-#10
+#10;
 
 reset <= 1;
 
