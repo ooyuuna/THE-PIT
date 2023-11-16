@@ -1,13 +1,12 @@
-//module dMemBase(addr, clk, enable, dataIn, readwrite, reset, dataOut);
+//module dMemBase(addr, clk, enable, dataIn, readWrite, reset, dataOut);
 
 module baseTB();
-
 reg [31:0] addr;
-reg clk, enable, readwrite, reset;
+reg clk, enable, readWrite, reset;
 reg [31:0] dataIn;
 wire [31:0] dataOut;
 
-dMemBase testBase(addr, clk, enable, dataIn, readwrite, reset, dataOut);
+dMemBase testBase(addr, clk, enable, dataIn, readWrite, reset, dataOut);
 
 always begin
 #5; clk <= 0;
@@ -40,5 +39,5 @@ readWrite <= 0;
 
 #10;
 
-
+end
 endmodule
