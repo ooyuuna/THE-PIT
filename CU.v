@@ -59,7 +59,7 @@ always @ (posedge clk)begin
 		3'b101: ALUop <= 4'b1101; //SRL
 		
 		3'b000: begin
-			if (I[30]) begin
+			if (I[26]) begin //I changed the I instruction from 30 to 26
 				ALUop <= 4'b0001; //SUB
 			end
 			else begin
@@ -116,10 +116,10 @@ always @ (posedge clk)begin
         
         001:begin //not equal //is this number right i mightve hypothetically deleted it.
         if (!BrEq)
-        PCSel <= 0;
+        PCSel <= 1;
         
         else 
-        PCSel <=1;
+        PCSel <=0;
         end
         
         004:begin //less than
@@ -132,10 +132,10 @@ always @ (posedge clk)begin
         
         005:begin //greater than or equal
         if (!BrLt)
-        PCSel <= 0;
+        PCSel <= 1;
         
         else 
-        PCSel <=1;
+        PCSel <=0;
         end 
         
         endcase
