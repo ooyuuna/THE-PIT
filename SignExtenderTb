@@ -1,0 +1,28 @@
+module SignExtenderTb(
+output reg clk,
+output reg flag, //this is your "ImmSel" flag
+output reg [11:0] imm,
+wire  [31:0] out
+    );
+    immSignExtender extend(clk, flag, imm, out);
+    always begin
+    #5; clk <= 0;
+    #5; clk <= 1;
+    
+    end
+   
+    initial begin
+    flag <= 1;
+     #20;
+    imm <= 12'b000000000000;
+    #20;
+    flag <= 0;
+     #20;
+    imm <= 12'b000000000000;
+    #20;
+    flag <= 1;
+     #20;
+    imm <= 12'b000111000100;
+    #20;
+    end
+endmodule
