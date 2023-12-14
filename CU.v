@@ -59,7 +59,7 @@ always @ (posedge clk)begin
 		3'b101: ALUop <= 4'b1101; //SRL
 		
 		3'b000: begin
-			if (I[26]) begin //I changed the I instruction from 30 to 26
+			if (I[30]) begin //I changed the I instruction from 26 to 30
 				ALUop <= 4'b0001; //SUB
 			end
 			else begin
