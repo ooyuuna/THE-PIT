@@ -59,7 +59,7 @@ always @ (posedge clk)begin
 		3'b101: ALUop <= 4'b1101; //SRL
 		
 		3'b000: begin
-			if (I[30]) begin //I changed the I instruction from 26 to 30
+			if (I[30]) begin //I changed the I instruction from 30 to 26
 				ALUop <= 4'b0001; //SUB
 			end
 			else begin
@@ -69,7 +69,7 @@ always @ (posedge clk)begin
 		default: ALUop <= 4'b0000; //nothing its just to not break this.
 		endcase
 		
-	 
+	
 	 
     end
      
@@ -92,8 +92,9 @@ always @ (posedge clk)begin
 		3'b000: ALUop <= 4'b1001; //ADD
 		default: ALUop <= 4'b0000; //nothing its just to not break this.
 		endcase
-	 
-	 
+	
+	  #40;
+	 wEn <= 1;
     end
     
     7'b1100011:begin //branching
@@ -139,6 +140,7 @@ always @ (posedge clk)begin
         end 
         
         endcase
+
         end
     endcase
     end
